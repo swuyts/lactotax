@@ -86,7 +86,7 @@ shinyUI(fluidPage(
     div(
         style = "text-align:center",
         tags$small("Developed by"),
-        tags$small(tags$a(href="www.sanderwuyts.com", "dr. Sander Wuyts")),
+        tags$small(tags$a(href="https://www.sanderwuyts.com", "dr. Sander Wuyts")),
         tags$small("and hosted at "),
         tags$small(tags$a(href="http://www.bork.embl.de", "EMBL (Bork Group)."))
         
