@@ -1,5 +1,5 @@
 # lactotax
 
-Tool to help users make sense of the new Lactobacillus taxonomy.
+Shiny tool to help users make sense of the new Lactobacillus taxonomy.
 
-More info soon.
+Currently available at: [http://lactotax.embl.de/wuyts/lactotax/]

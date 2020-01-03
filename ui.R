@@ -77,7 +77,7 @@ shinyUI(fluidPage(
         "Please report mistakes and bugs via",
         tags$a(href="mailto:wuyts@embl.de", "e-mail"),
         " or open a new",
-        tags$a(href="www.github.com/swuyts", "Github(ADD LINK) issue.")
+        tags$a(href="https://github.com/swuyts/lactotax/issues", "Github issue.")
     ),
     hr(),
     
