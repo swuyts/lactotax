@@ -70,7 +70,29 @@ shinyUI(fluidPage(
     ),
     br(),
     
+
+    # Logos
     
+    div(
+        style = "text-align:center",
+        tags$a(href="https://lebeerlab.com/",
+            tags$img(src="university-of-antwerp.png", width = 190, height = 60, alt = "University of Antwerp: Lebeer lab", hspace = 20)
+        ),
+        tags$a(href="https://www.ualberta.ca/agriculture-life-environment-sciences/about-us/contact-us/facultylecturer-directory/michael-gaenzle",
+               tags$img(src="university-of-alberta.png", width = 200, height = 50, alt = "University of Alberta: Gaenzle lab", hspace = 20)
+        ),
+        tags$a(href="http://www.dbt.univr.it/?ent=persona&id=145&lang=en",
+               tags$img(src="university-of-verona.png", width = 200, height = 80, alt = "University of Verona: Felis lab", hspace = 20)
+        ),
+        br(),
+        tags$a(href="https://site.unibo.it/subcommittee-lactobacillus-bifidobacterium/en",
+               tags$img(src="iscp.png", width = 120, height = 120, alt = "ISCP", hspace = 20)
+        ),
+        
+
+    ),
+    hr(),
+
     # Bugs and mistakes
     div(
         style = "text-align:center",
@@ -79,9 +101,7 @@ shinyUI(fluidPage(
         " or open a new",
         tags$a(href="https://github.com/swuyts/lactotax/issues", "Github issue.")
     ),
-    hr(),
-    
-    
+
     # Development
     div(
         style = "text-align:center",
