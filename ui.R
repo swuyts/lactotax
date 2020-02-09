@@ -11,7 +11,7 @@
 library(shiny)
 source("data.R", local = TRUE)
 
-# Define UI for application that draws a histogram
+# Define UI for application
 shinyUI(fluidPage(
     
     # Application title
@@ -26,7 +26,9 @@ shinyUI(fluidPage(
             h3("Enter a species name"),
             autocomplete_input("auto_basonym",
                                "Basonym (old species name)",
-                               taxtable_intern$basonym %>% sort(),
+                               taxtable_intern$basonym %>% 
+                                   c(., obsolete_names) %>% 
+                                   sort(),
                                max_options = 50),
             actionButton("basonym_search", "Search"),
             p(""),
