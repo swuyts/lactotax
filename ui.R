@@ -2,12 +2,6 @@
 # This is the user-interface definition of a Shiny web application. 
 #
 
-# TO do:
-# - Fix the double name problem with casei (also add field for basonyms?)
-#
-# Deploy on Swifter
-
-
 library(shiny)
 source("data.R", local = TRUE)
 
