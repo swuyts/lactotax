@@ -68,7 +68,7 @@ shinyServer(function(input, output) {""
                 str_split(";") %>% 
                 unlist() %>% 
                 str_squish() %>% 
-                str_c('<a href="https://doi.org/', ., '">', ., "</a>") %>% 
+                str_c('<a href="https://doi.org/', ., '", target="_blank">', ., "</a>") %>% 
                 str_c(collapse = ", ")
             
             # Add to string
@@ -91,13 +91,13 @@ shinyServer(function(input, output) {""
         year <- search$filtered_table %>% pull(`year of effective or valid publication`) %>% str_c("<b>Year of valid or effective publication: </b>", .)
         doi <- search$filtered_table %>% 
             pull(`valid description or effective publication (DOI of most recent or most relevant record)`) %>% 
-            str_c("<b>DOI: </b>", '<a href="https://doi.org/', ., '">', ., "</a>") 
+            str_c("<b>DOI: </b>", '<a href="https://doi.org/', ., '", target="_blank">', ., "</a>") 
         
         # Get accessions
         rRNA <- search$filtered_table %>% pull(`16S rRNA accession no`) %>% 
-            str_c("<b>Genbank 16S rRNA gene accession number: </b>", '<a href="https://www.ncbi.nlm.nih.gov/nuccore/', ., '">', ., "</a>")
+            str_c("<b>Genbank 16S rRNA gene accession number: </b>", '<a href="https://www.ncbi.nlm.nih.gov/nuccore/', ., '", target="_blank">', ., "</a>")
         genome <- search$filtered_table %>% pull(`Genome Accession Number Type Strain`) %>% 
-            str_c("<b>Genbank genome accession number: </b>", '<a href="https://www.ncbi.nlm.nih.gov/nuccore/', ., '">', ., "</a>")
+            str_c("<b>Genbank genome accession number: </b>", '<a href="https://www.ncbi.nlm.nih.gov/nuccore/', ., '", target="_blank">', ., "</a>")
         
         
         HTML(str_c("<hr>",

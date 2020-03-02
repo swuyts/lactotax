@@ -72,17 +72,21 @@ shinyUI(fluidPage(
     div(
         style = "text-align:center",
         tags$a(href="https://lebeerlab.com/",
-            tags$img(src="university-of-antwerp.png", width = 190, height = 60, alt = "University of Antwerp: Lebeer lab", hspace = 20)
+            tags$img(src="university-of-antwerp.png", width = 190, height = 60, alt = "University of Antwerp: Lebeer lab", hspace = 20),
+            target="_blank"
         ),
         tags$a(href="https://www.ualberta.ca/agriculture-life-environment-sciences/about-us/contact-us/facultylecturer-directory/michael-gaenzle",
-               tags$img(src="university-of-alberta.png", width = 200, height = 50, alt = "University of Alberta: Gaenzle lab", hspace = 20)
+               tags$img(src="university-of-alberta.png", width = 200, height = 50, alt = "University of Alberta: Gaenzle lab", hspace = 20),
+               target="_blank"
         ),
         tags$a(href="http://www.dbt.univr.it/?ent=persona&id=145&lang=en",
-               tags$img(src="university-of-verona.png", width = 200, height = 80, alt = "University of Verona: Felis lab", hspace = 20)
+               tags$img(src="university-of-verona.png", width = 200, height = 80, alt = "University of Verona: Felis lab", hspace = 20),
+               target="_blank"
         ),
         br(),
         tags$a(href="https://site.unibo.it/subcommittee-lactobacillus-bifidobacterium/en",
-               tags$img(src="iscp.png", width = 120, height = 120, alt = "ISCP", hspace = 20)
+               tags$img(src="iscp.png", width = 120, height = 120, alt = "ISCP", hspace = 20),
+               target="_blank"
         ),
         
 
@@ -95,16 +99,16 @@ shinyUI(fluidPage(
         "Please report mistakes and bugs via",
         tags$a(href="mailto:wuyts@embl.de", "e-mail"),
         " or open a new",
-        tags$a(href="https://github.com/swuyts/lactotax/issues", "Github issue.")
+        tags$a(href="https://github.com/swuyts/lactotax/issues", "Github issue.", target="_blank")
     ),
 
     # Development
     div(
         style = "text-align:center",
         tags$small("Developed by"),
-        tags$small(tags$a(href="https://www.sanderwuyts.com", "dr. Sander Wuyts")),
+        tags$small(tags$a(href="https://www.sanderwuyts.com", "dr. Sander Wuyts", target="_blank")),
         tags$small("and hosted at "),
-        tags$small(tags$a(href="http://www.bork.embl.de", "EMBL (Bork Group)."))
+        tags$small(tags$a(href="http://www.bork.embl.de", "EMBL (Bork Group).", target="_blank"))
         
     )
     
