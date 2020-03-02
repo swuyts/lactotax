@@ -1,7 +1,3 @@
-#
-# This is the user-interface definition of a Shiny web application. 
-#
-
 library(shiny)
 source("data.R", local = TRUE)
 
@@ -19,10 +15,10 @@ shinyUI(fluidPage(
         sidebarPanel(
             h3("Enter a species name"),
             selectizeInput("auto_basonym",
-                               "Basonym (old species name)",
-                               taxtable_intern$basonym %>% 
-                                   c(., obsolete_names) %>% 
-                                   sort(),
+                           "Basonym (old species name)",
+                           taxtable_intern$basonym %>% 
+                               c(., obsolete_names) %>% 
+                               sort(),
                            options = list(
                                placeholder = 'e.g. Lactobacillus sanfranciscensis',
                                onInitialize = I('function() { this.setValue(""); }'),
@@ -32,12 +28,12 @@ shinyUI(fluidPage(
             p("or"),
             p(""), 
             selectizeInput("auto_newname",
-                               "New name",
-                               taxtable_intern$new_name %>% sort(),
-                               options = list(
-                                placeholder = 'e.g. Fructilactobacillus sanfranciscensis',
-                                onInitialize = I('function() { this.setValue(""); }'),
-                                selectOnTab = T)),
+                           "New name",
+                           taxtable_intern$new_name %>% sort(),
+                           options = list(
+                               placeholder = 'e.g. Fructilactobacillus sanfranciscensis',
+                               onInitialize = I('function() { this.setValue(""); }'),
+                               selectOnTab = T)),
             actionButton("newname_search", "Search")
             
         ),
@@ -68,18 +64,18 @@ shinyUI(fluidPage(
         tags$i(
             "A taxonomic note on the genus Lactobacillus: Description of 23 novel genera, emended description of the genus Lactobacillus Beijerink 1901, and union of Lactobacillaceae and Leuconostocaceae."
         ),
-        tags$b("Under revision.")
+        tags$b("Accepted.")
     ),
     br(),
     
-
+    
     # Logos
     
     div(
         style = "text-align:center",
         tags$a(href="https://lebeerlab.com/",
-            tags$img(src="university-of-antwerp.png", width = 190, height = 60, alt = "University of Antwerp: Lebeer lab", hspace = 20),
-            target="_blank"
+               tags$img(src="university-of-antwerp.png", width = 190, height = 60, alt = "University of Antwerp: Lebeer lab", hspace = 20),
+               target="_blank"
         ),
         tags$a(href="https://www.ualberta.ca/agriculture-life-environment-sciences/about-us/contact-us/facultylecturer-directory/michael-gaenzle",
                tags$img(src="university-of-alberta.png", width = 200, height = 50, alt = "University of Alberta: Gaenzle lab", hspace = 20),
@@ -95,34 +91,40 @@ shinyUI(fluidPage(
                target="_blank"
         ),
         
-
+        
     ),
     hr(),
-
+    
     # Bugs and mistakes
     div(
         style = "text-align:center",
+        "Last updated on: ",
+        tags$b(str_c(db_version %>% day,
+              db_version %>% month(label = T),
+              db_version %>% year,
+              sep = " ")),
+        br(),
+        br(),
         "Please report mistakes and bugs via",
         tags$a(href="mailto:wuyts@embl.de", "e-mail"),
         " or open a new",
         tags$a(href="https://github.com/swuyts/lactotax/issues", "Github issue.", target="_blank")
     ),
-
+    
     # Development
     div(
         style = "text-align:center",
         tags$small("Developed by"),
         tags$small(tags$a(href="https://www.sanderwuyts.com", "dr. Sander Wuyts", target="_blank")),
-        tags$small("and hosted at "),
-        tags$small(tags$a(href="http://www.bork.embl.de", "EMBL (Bork Group).", target="_blank"))
+        tags$small("and hosted by "),
+        tags$small(tags$a(href="http://www.bork.embl.de", "EMBL (Bork Group)", target="_blank")),
+        tags$small(", "),
+        tags$small(tags$a(href="https://www.ualberta.ca/agriculture-life-environment-sciences", "Faculty of ALES (UofA)", target="_blank")),
+        tags$small("and "),
+        tags$small(tags$a(href="https://lebeerlab.com/", "UAntwerp (Lebeer lab)", target="_blank"))
+        
         
     )
-    
-    
-    
-
-    
-    
     
 )
 )

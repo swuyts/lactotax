@@ -2,14 +2,20 @@ library(dplyr)
 library(stringr)
 library(DT)
 library(janitor)
-library(dqshiny)
 library(readxl)
+library(lubridate)
 
+# Get most recent file
+most_recent_file <- list.files("data") %>% sort() %>% last()
 
-# Read and parse table
-taxtable <- read_xlsx("data/2020_02_09.xlsx") %>% 
+# Parse date from file
+db_version <- ymd(most_recent_file)
+
+# Read table
+taxtable <- read_xlsx(str_c("data/", most_recent_file)) %>% 
   remove_empty("cols") 
 
+# Parse table
 taxtable_intern <- taxtable %>% 
   mutate(subspecies = str_replace_na(subspecies, ""),
          Species = str_c(Species, subspecies, sep = " ")) %>% 
