@@ -86,6 +86,10 @@ shinyUI(fluidPage(
                target="_blank"
         ),
         br(),
+        tags$a(href="https://distal.unibo.it/it",
+               tags$img(src="unibo.png", width = 150, height = 120, alt = "University of Bologna", hspace = 20),
+               target="_blank"
+        ),
         tags$a(href="https://site.unibo.it/subcommittee-lactobacillus-bifidobacterium/en",
                tags$img(src="iscp.png", width = 120, height = 120, alt = "ISCP", hspace = 20),
                target="_blank"
