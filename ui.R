@@ -18,20 +18,26 @@ shinyUI(fluidPage(
         
         sidebarPanel(
             h3("Enter a species name"),
-            autocomplete_input("auto_basonym",
+            selectizeInput("auto_basonym",
                                "Basonym (old species name)",
                                taxtable_intern$basonym %>% 
                                    c(., obsolete_names) %>% 
                                    sort(),
-                               max_options = 50),
+                           options = list(
+                               placeholder = 'e.g. Lactobacillus sanfranciscensis',
+                               onInitialize = I('function() { this.setValue(""); }'),
+                               selectOnTab = T)),
             actionButton("basonym_search", "Search"),
             p(""),
             p("or"),
             p(""), 
-            autocomplete_input("auto_newname",
+            selectizeInput("auto_newname",
                                "New name",
                                taxtable_intern$new_name %>% sort(),
-                               max_options = 50),
+                               options = list(
+                                placeholder = 'e.g. Fructilactobacillus sanfranciscensis',
+                                onInitialize = I('function() { this.setValue(""); }'),
+                                selectOnTab = T)),
             actionButton("newname_search", "Search")
             
         ),
