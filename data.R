@@ -18,8 +18,15 @@ taxtable <- read_xlsx(str_c("data/", most_recent_file)) %>%
 # Parse table
 taxtable_intern <- taxtable %>% 
   mutate(subspecies = str_replace_na(subspecies, ""),
-         Species = str_c(Species, subspecies, sep = " ")) %>% 
-  mutate(basonym = str_c(Genus, Species, sep = " ")) %>% 
+         Species = if_else(subspecies != "", 
+                           str_c(Species, "subsp.", subspecies, sep = " "),
+                           Species)) %>% 
+  mutate(basonym = str_c(Genus, Species, sep = " ")) %>%
+  mutate(`proposed new species name` = if_else(str_detect(`proposed new species name`, " "),
+                                               str_replace(`proposed new species name`, " "," subsp. "),
+                                               `proposed new species name`
+                                               )
+         ) %>% 
   mutate(new_name = str_c(`proposed new genus name`, `proposed new species name`, sep = " "))
 
 obsolete_names <- taxtable_intern$`obsolete names`[!is.na(taxtable_intern$`obsolete names`)] %>% 
