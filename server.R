@@ -58,8 +58,16 @@ shinyServer(function(input, output) {""
             
             # Merge with "regular" basonym
             basonym <- search$filtered_table %>% 
-                pull(basonym) %>% 
-                str_c("<b>Basonyms (old species names): </b>", "<i>", ., ", ", additional_basonyms, "</i>")
+                pull(basonym)
+            
+            # If the name is not changed, display this
+            if(basonym == (search$filtered_table %>% pull(new_name))){
+                basonym <- str_c("<b>Basonyms (old species names): </b>", "<i>", additional_basonyms, "</i>")
+            } else {
+                basonym <- basonym %>% 
+                    str_c("<b>Basonyms (old species names): </b>", "<i>", ., ", ", additional_basonyms, "</i>")
+            }
+                
             
             # Get dois for rejection
             dois <- search$filtered_table %>% 
@@ -80,8 +88,15 @@ shinyServer(function(input, output) {""
         } else {
             
             basonym <- search$filtered_table %>% 
-            pull(basonym) %>% 
-            str_c("<b>Basonym (old species name): </b>", "<i>", ., "</i>")
+            pull(basonym) 
+            
+            # If the name is not changed, display this
+            if(basonym == (search$filtered_table %>% pull(new_name))){
+                basonym <- str_c("<b>No name change</b>")
+            } else {
+                basonym <- basonym %>% 
+                    str_c("<b>Basonym (old species name): </b>", "<i>", ., "</i>")
+            }
             
         }
         

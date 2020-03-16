@@ -82,7 +82,7 @@ shinyUI(fluidPage(
                target="_blank"
         ),
         tags$a(href="http://www.dbt.univr.it/?ent=persona&id=145&lang=en",
-               tags$img(src="university-of-verona.png", width = 200, height = 80, alt = "University of Verona: Felis lab", hspace = 20),
+               tags$img(src="university-of-verona.png", width = 200, height = 70, alt = "University of Verona: Felis lab", hspace = 20),
                target="_blank"
         ),
         br(),
