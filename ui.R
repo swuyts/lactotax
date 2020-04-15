@@ -64,7 +64,10 @@ shinyUI(fluidPage(
         tags$i(
             "A taxonomic note on the genus Lactobacillus: Description of 23 novel genera, emended description of the genus Lactobacillus Beijerink 1901, and union of Lactobacillaceae and Leuconostocaceae."
         ),
-        tags$b("Accepted.")
+        tags$a(href="https://doi.org/10.1099/ijsem.0.004107",
+               tags$b("https://doi.org/10.1099/ijsem.0.004107"),
+               target="_blank"
+        ),
     ),
     br(),
     
