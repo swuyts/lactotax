@@ -41,3 +41,13 @@ welcome_text <-
   <p>In the past, several species of the genus <i>Lactobacillus</i> had already been placed in new genera, such as <i>Carnobacterium, Convivia, Oenococcus</i> or <i>Weissella</i>. However, the newly used whole genome-based comparisons suggested the need for a much more profound taxonomic reorganisation, resulting in the ion of 23 new genera and reduction the original genus of <i>Lactobacillus</i> to only 38 species around the type species, <i>Lactobacillus delbrueckii</i>. Further details can be found here (IJSEM) and here (UNIBO). </p>
   <p>As species of the genus have important economic, medical and environmental importance, <b>we have created a search tool below where you can find the new names of 250 species</b>, previously assigned to the genus <i>Lactobacillus</i> but now referred to with a new genus name. <b>It is important to stress that the species assignment did not change, so a search on the 'old' species name should lead you to the new, correct, taxonomic naming of the species or subspecies concerned. The website is also providing access to the published description of the species, genome accession numbers, where available, and accession numbers of the 16S rRNA genes.</b> </p>
 <p>We hope this tool will be useful for you and anyone that for medical, legal or nutritional reason has an interest or requirement for correct taxonomic naming. </p>"
+
+# Write easy to use tsv table
+taxtable_intern %>% 
+  select(basonym, new_name) %>% 
+  filter(!is.na(basonym)) %>% 
+  write.table(str_c("data/", str_replace(most_recent_file, ".xlsx", ".tsv")),
+              sep = "\t",
+              row.names = F)
+
+            
