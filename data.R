@@ -44,11 +44,11 @@ welcome_text <-
 <p>We hope this tool will be useful for you and anyone that for medical, legal or nutritional reason has an interest or requirement for correct taxonomic naming. </p>"
 
 # Write easy to use tsv table
-taxtable_intern %>% 
-  select(basonym, new_name) %>% 
-  filter(!is.na(basonym)) %>% 
-  write.table(str_c("data/", str_replace(most_recent_file, ".xlsx", ".tsv")),
-              sep = "\t",
-              row.names = F)
+# taxtable_intern %>% 
+#   select(basonym, new_name) %>% 
+#   filter(!is.na(basonym)) %>% 
+#   write.table(str_c("data/", str_replace(most_recent_file, ".xlsx", ".tsv")),
+#               sep = "\t",
+#               row.names = F)
 
             
