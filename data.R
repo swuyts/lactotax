@@ -27,7 +27,8 @@ taxtable_intern <- taxtable %>%
                                                `proposed new species name`
                                                )
          ) %>% 
-  mutate(new_name = str_c(`proposed new genus name`, `proposed new species name`, sep = " "))
+  mutate(new_name = str_c(`proposed new genus name`, `proposed new species name`, sep = " ")) %>% 
+  mutate_at(c("Type strain", "16S rRNA accession no", "Genome Accession Number Type Strain"), str_replace_na)
 
 obsolete_names <- taxtable_intern$`obsolete names`[!is.na(taxtable_intern$`obsolete names`)] %>% 
   str_split(";") %>% 
