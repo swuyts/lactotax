@@ -142,6 +142,10 @@ shinyServer(function(input, output) {""
         
         genus_name <- search$filtered_table %>% pull(`proposed new genus name`) %>% .[1]
         
+        meaning <- genus_info %>% 
+            filter(genus == genus_name) %>% 
+            pull(meaning)
+        
         type_species <- genus_info %>% 
             filter(genus == genus_name) %>% 
             pull(type_species)
@@ -149,9 +153,12 @@ shinyServer(function(input, output) {""
         
         genus_properties <- genus_info %>% 
             filter(genus == genus_name) %>% 
-            pull(info)
+            pull(properties)
         
         HTML(str_c("<h2>Properties of the genus</h2>",
+                   "<b>Meaning of the genus name: </b>",
+                   meaning,
+                   "</br>",
                    "<b>Type species: </b>",
                    "<i>",
                    type_species,

@@ -53,8 +53,4 @@ welcome_text <-
 
 
 # Genus info
-genus_info <- tibble(
-  genus = "Lactobacillus",
-  type_species = "L. delbrueckii",
-  info = "Homofermentative with strain-specific ability to ferment pentoses, thermophilic, vancomycin-sensitive, adapted to vertebrate or insect hosts."
-)
+genus_info <- read_xlsx("genus_descriptions/genus_descriptions.xlsx")
