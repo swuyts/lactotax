@@ -134,6 +134,36 @@ shinyServer(function(input, output) {""
         )
     })
     
+    
+    # Genus information
+    output$genus_info <- renderUI({
+        # Return nothing is no search is performed
+        if (is.null(search$filtered_table)) return()
+        
+        genus_name <- search$filtered_table %>% pull(`proposed new genus name`) %>% .[1]
+        
+        type_species <- genus_info %>% 
+            filter(genus == genus_name) %>% 
+            pull(type_species)
+        
+        
+        genus_properties <- genus_info %>% 
+            filter(genus == genus_name) %>% 
+            pull(info)
+        
+        HTML(str_c("<h2>Properties of the genus</h2>",
+                   "<b>Type species: </b>",
+                   "<i>",
+                   type_species,
+                   "</i></br>",
+                   "<b>Genus properties: </b>",
+                   genus_properties
+                    )
+            )
+        
+        
+    })
+    
     # Header for other species in same genus 
     output$other_species_text <- renderUI({
         # Return nothing is no search is performed

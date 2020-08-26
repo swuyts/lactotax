@@ -43,6 +43,7 @@ shinyUI(fluidPage(
         mainPanel(
             # Formatting
             htmlOutput("properties"),
+            htmlOutput("genus_info"),
             htmlOutput("other_species_text"),
             DT::dataTableOutput("other_species_table")
         )

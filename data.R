@@ -51,4 +51,10 @@ welcome_text <-
 #               sep = "\t",
 #               row.names = F)
 
-            
+
+# Genus info
+genus_info <- tibble(
+  genus = "Lactobacillus",
+  type_species = "L. delbrueckii",
+  info = "Homofermentative with strain-specific ability to ferment pentoses, thermophilic, vancomycin-sensitive, adapted to vertebrate or insect hosts."
+)
