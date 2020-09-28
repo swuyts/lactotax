@@ -69,6 +69,11 @@ shinyUI(fluidPage(
                tags$b("https://doi.org/10.1099/ijsem.0.004107"),
                target="_blank"
         ),
+        "; open access DOI:",
+        tags$a(href="https://doi.org/10.7939/r3-egnz-m294",
+               tags$b("https://doi.org/10.7939/r3-egnz-m294"),
+               target="_blank"
+        ),
     ),
     br(),
     
