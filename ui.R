@@ -130,8 +130,6 @@ shinyUI(fluidPage(
         tags$small("Developed by"),
         tags$small(tags$a(href="https://www.sanderwuyts.com", "dr. Sander Wuyts", target="_blank")),
         tags$small("and hosted by "),
-        tags$small(tags$a(href="http://www.bork.embl.de", "EMBL (Bork Group)", target="_blank")),
-        tags$small(", "),
         tags$small(tags$a(href="https://www.ualberta.ca/agriculture-life-environment-sciences", "Faculty of ALES (UofA)", target="_blank")),
         tags$small("and "),
         tags$small(tags$a(href="https://lebeerlab.com/", "UAntwerp (Lebeer lab)", target="_blank"))
