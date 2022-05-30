@@ -3,7 +3,7 @@ source("data.R", local = TRUE)
 
 # Define UI for application
 shinyUI(fluidPage(
-    
+    tags$head(includeHTML(("analytics.html"))),
     # Application title
     titlePanel(""),
     
