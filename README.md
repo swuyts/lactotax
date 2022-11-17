@@ -9,6 +9,5 @@ https://doi.org/10.1099/ijsem.0.004107
 
 Currently the tool is available at: 
 
-- http://lactotax.embl.de/wuyts/lactotax/
 - http://lactobacillus.uantwerpen.be
 - http://lactobacillus.ualberta.ca
